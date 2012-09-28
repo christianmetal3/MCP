@@ -1,0 +1,19 @@
+Español
+English
+Việt
+
+en User Name:
+vn User Name:
+es Nombre de usuario:
+
+en Password:
+es Contraseña:
+vn Mật khẩu:
+
+en Submit
+es presentar
+vn trình
+
+Forgot Your Password?
+¿Olvidó su contraseña?
+vn Quên mật khẩu?

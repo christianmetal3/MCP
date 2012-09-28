@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="600" height="400" title="First Run">
+<fx:Script>
+	<![CDATA[
+		import mx.events.FlexEvent;
+		import mx.events.ResizeEvent;
+		import mx.managers.PopUpManager;
+		import mx.rpc.events.ResultEvent;
+		
+		// Handle the close button and Cancel button.
+		private function handleCloseEvent():void {
+			PopUpManager.removePopUp(this);
+		}  
+		
+	]]>
+</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:TileGroup x="167" y="36" width="299" height="200">
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498631918056439birthday_cake.svg.thumb.png"/>
+		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
+				  source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+		
+	</s:TileGroup>
+</s:TitleWindow>

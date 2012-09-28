@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Manager - Training Log</title>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<script src="../thelordspace/media/scripts/jquery.js" type="text/javascript"></script>
+<script src="jquery.tools.min.js" type="text/javascript"></script>
+<style type="text/css">
+body {
+	background-color: #999;
+}
+#test2 {
+	background-color:#F00;
+	display:none;
+	width:175px;
+}
+#header{
+	height:100px;
+	width:100%;
+	background-color:#09F;
+}
+#userinfo{
+	float:right;
+}
+</style>
+<script>
+$(document).ready(function(){
+$("#test").click(function () {$("#test2").toggle();});
+$("#567").mouseleave(function () {$("#test2").hide();});
+ });
+</script>
+</head>
+
+<body>
+<div id="header">
+<a class="adduser" id="a" href="#"></a> Mode :
+<div class="mode" style="display:inline-block"><a id="m1" href="#" ></a><a id="m2" href="#"></a></div>
+<div id="userinfo">welcome, User Sign Out
+<div id="567"><a href="#" id="test">My Account</a>
+  <div id="test2">Account Setting<br />
+    Vizual Effects<br/>
+    Help</div></div>
+</div>
+<form action="" method="post">Departments: <select><option>dept 1</option><option>dept 2</option><option>dept 3</option></select></form><form action="" method="get">Search: <input type="text" /></form>
+</div>
+
+
+</body>
+</html>

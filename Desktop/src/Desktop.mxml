@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   currentState="login"
+					   width.login="483" height.login="522">
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert
+			import mx.managers.PopUpManager;
+			import spark.components.TitleWindow;
+			import flash.geom.Point;
+			import mx.events.ResizeEvent;
+			import mx.rpc.events.ResultEvent;
+		 
+			[Bindable]
+			public var username:String;
+			[Bindable]
+			public var password:String;
+			
+			private function tryLogin():void
+			{
+				username = usernameLogin.text;
+				password = passwordLogin.text;
+				usernameLogin.text = "";
+				passwordLogin.text = "";
+				loginService.send();
+			}
+			
+			private function loginResult(evt:ResultEvent):void
+			{
+				if (evt.result.status == true)
+				{
+					currentState = "main";
+				}            
+				else
+				{
+					Alert.show("Login failedl", "Failure");
+				}
+			}
+			
+				[Bindable]
+				private var locales:Array = [{label:"English", locale:"en_US"},
+					{label:"español", locale:"es_ES"},
+					{label:"việt", locale:"vie_VN"}];
+			
+			private function comboChangeHandler():void
+			{
+				resourceManager.localeChain = [localeComboBox.selectedItem.locale];
+			}
+	
+			
+			private var point1:Point = new Point();
+			
+			// Open the TitleWindow container.
+			// Cast the return value of the createPopUp() method
+			// to SimpleTitleWindowExample, the name of the 
+			// component containing the TitleWindow container.
+			private function showWindow():void {
+				var login:ForgotPassword=ForgotPassword(PopUpManager.createPopUp( this, ForgotPassword , true));
+			}
+			private function testRun():void {
+				var test:firstRun=firstRun(PopUpManager.createPopUp( this, firstRun , true));
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Metadata>
+		[ResourceBundle("resources")]
+	</fx:Metadata> 
+	<s:states>
+		<s:State name="login"/>
+		<s:State name="main"/>
+	</s:states>
+	
+	<fx:Declarations>
+		
+	
+	<s:HTTPService id="loginService" url="http://localhost/~ChristianMetal/MCP2/login.php" method="POST" result="loginResult(event)">
+	<s:request xmlns="">
+	<user>{username}</user>
+	<pass>{password}</pass>
+	</s:request>
+	</s:HTTPService>
+	</fx:Declarations>	
+	<s:Image includeIn="login" top="26" horizontalCenter="0" source="assets/mission_control.png"/>
+	
+	<s:Form includeIn="login" top="197" horizontalCenter="0" skinClass="spark.skins.spark.FormSkin">
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="right"/>
+		</s:layout>
+		<s:FormItem width="186">
+			<s:TextInput id="usernameLogin" width="160"
+						 prompt="{resourceManager.getString('resources', 'login.user_name.field')}"
+						 textAlign="left"/>
+		</s:FormItem>
+		<s:FormItem width="186">
+			<s:TextInput id="passwordLogin" width="160"
+						 prompt="{resourceManager.getString('resources', 'login.password.field')}"
+						 textAlign="left"/>
+		</s:FormItem>
+		<s:FormItem width="124">
+			<s:Button width="100"
+					  label="{resourceManager.getString('resources', 'login.login.button')}"
+					  click="tryLogin()"/>
+		</s:FormItem>
+	</s:Form>
+	
+	<s:HGroup includeIn="login" y="431" width="230" height="25" horizontalAlign="right"
+			  horizontalCenter="0" verticalAlign="middle">
+		<s:Label includeIn="login" width="99" height="20" text="Change language"
+				 verticalAlign="middle"/>
+		<mx:ComboBox id="localeComboBox" includeIn="login" width="116" change="comboChangeHandler()"
+					 dataProvider="{locales}" horizontalCenter="0" paddingRight="5"/>
+	</s:HGroup>
+	<mx:LinkButton includeIn="login" top="378"
+				   label="{resourceManager.getString('resources', 'login.forgotpass.link')}"
+				   click="showWindow()" horizontalCenter="-107"/>
+	<mx:LinkButton includeIn="login" x="291" y="378" label="LinkButton" click="testRun()"/>
+	
+</s:WindowedApplication>
+

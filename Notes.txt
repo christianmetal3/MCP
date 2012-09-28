@@ -1,0 +1,24 @@
+security questions
+(set 1)
+What was your childhood nickname? 
+What is your grandmother's first name?
+In what city or town was your first job?
+What school did you attend for sixth grade?
+What is your oldest sibling’s birthday month and year? (e.g., January 1900) 
+Where were you when you first heard about 9/11?
+What was the first concert you attended?
+What is the name of the company of your first job?
+What was your dream job as a child?
+Where did you vacation last year?
+
+(set 2)
+In what city does your nearest sibling live? 
+What is the name of your favorite childhood friend? 
+What is your mother's middle name? 
+What was your high school mascot?
+What was the make and model of your first car?
+Who was your childhood hero? 
+What is your preferred musical genre? 
+What month and day is your anniversary? (e.g., January 2)
+What was your favorite sport in high school?
+What is your first pet's name?

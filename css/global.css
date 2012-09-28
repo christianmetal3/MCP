@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	padding-top:0px;
+}
+h1 {
+	text-align:center;
+	font-family:"Times New Roman", Times, serif;
+	font-size:36px;
+	color:#000;
+	padding-top:150px;
+}
+#login {
+	width:800px;
+	height:600px;
+	background-image: url(../img/loginbg.png);
+	margin: 0px auto;
+}
+#loginform {
+	text-align:right;
+	width:255px;
+	margin: 0px auto;
+}
+.credinput {
+	width:175px;
+}
+#footer {
+	text-align:center;
+	width:800px;
+	height:25px;
+	margin:0px auto;
+}
+#account{
+	
+}
+#departments {
+	width:150px;
+	height:100%;
+}
+.adduser {
+	float:left;
+	height:30px;
+	padding-right:15px;
+	width:94px;
+	line-height:30px;
+	background-image:url(../img/add_user.png);
+	background-repeat:no-repeat;
+}
+#a {
+	background-position: 0 0;
+}
+#a:hover {
+	background-position: 0 -80px;
+}
+#a:active {
+	background-position: 0 -40px;
+}
+.mode a {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	width: 85px;
+	background-image:url(../img/mode.png);
+	background-repeat: no-repeat;
+}
+.mode a.active {
+	cursor: default;
+}
+#m1 {
+	background-position: 0 0;
+}
+#m2 {
+	background-position: -85px 0;
+	
+}
+/* mouseover */
+#m1:hover {
+	background-position: 0 -80px;
+}
+#m2:hover {
+	background-position: -85px -80px;
+}
+/* mouse pressed */
+#m1:active {
+	background-position: 0 -40px;
+}
+#m2:active {
+	background-position: -85px -40px;
+}
+/* active button */
+#m1.active {
+	background-position: 0 -126px;
+}
+#m2.active {
+	background-position: -85px -126px !important;
+}
