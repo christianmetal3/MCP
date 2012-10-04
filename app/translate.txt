@@ -14,6 +14,34 @@ en Submit
 es presentar
 vn trình
 
-Forgot Your Password?
-¿Olvidó su contraseña?
+en Forgot Your Password?
+es ¿Olvidó su contraseña?
 vn Quên mật khẩu?
+
+en Next
+es Próximo
+vn Tiếp theo
+
+en Cancel
+es Cancelar
+vn Hủy bỏ
+
+en Please enter your user name.
+es Introduzca su nombre de usuario.
+vn Vui lòng nhập tên người dùng của bạn.
+
+en Answer the following security questions.
+es Responda a las preguntas de seguridad siguientes.
+vn Trả lời câu hỏi bảo mật sau.
+
+en Finish
+es Terminar
+vn Kết thúc
+
+en new  password
+es nueva contraseña
+vn mật khẩu mới
+
+en retype password
+es Vuelva a escribir la contraseña
+vn nhập lại mật khẩu

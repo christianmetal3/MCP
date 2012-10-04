@@ -2,7 +2,11 @@
 <s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009"
 			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:mx="library://ns.adobe.com/flex/mx"
-			   width="600" height="400" title="First Run">
+			   width="600" height="400" title="First Run"
+			   close="handleCloseEvent();">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
 <fx:Script>
 	<![CDATA[
 		import mx.events.FlexEvent;
@@ -20,7 +24,8 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:TileGroup x="167" y="36" width="299" height="200">
+	
+	<s:TileGroup id="pics" x="50" y="36" width="483" height="200" >
 		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
 				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
 		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
@@ -38,7 +43,22 @@
 		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
 				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498631918056439birthday_cake.svg.thumb.png"/>
 		<s:Image  top="35" width="75" height="75" horizontalCenter="-185"
-				  source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
+				 source="http://localhost/~ChristianMetal/MCP2/img/clip_art/119498577810047030key_juliane_krug_01.svg.thumb.png"/>
 		
 	</s:TileGroup>
+	<s:VScrollBar x="533" y="36" height="200" viewport="{pics}"/>
+	<s:DropDownList y="279" width="404" horizontalCenter="0" prompt="Choose one of the following questions.">
+		<mx:ArrayCollection>
+			<fx:String>What is your oldest sibling?s birthday month and year? (e.g., January 1900)</fx:String>
+			<fx:String>Alaska</fx:String>
+			<fx:String>Arizona</fx:String>
+			<fx:String>Arkansas</fx:String>
+			<fx:String>California</fx:String>
+		</mx:ArrayCollection>
+	</s:DropDownList>
+	<s:RichText y="9" fontSize="18" horizontalCenter="0" text="Choose a profile picture."/>
+	<s:RichText y="251" fontSize="18" horizontalCenter="0" text="Choose two security questions."/>
+	<s:DropDownList y="322" width="404" horizontalCenter="0"
+					prompt="Choose one of the following questions."></s:DropDownList>
+	<s:VScrollBar x="583" y="36" height="232" viewport=""/>
 </s:TitleWindow>

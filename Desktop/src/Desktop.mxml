@@ -3,7 +3,7 @@
 					   xmlns:s="library://ns.adobe.com/flex/spark"
 					   xmlns:mx="library://ns.adobe.com/flex/mx"
 					   currentState="login"
-					   width.login="483" height.login="522">
+					   width.login="485" height.login="525">
 	
 	
 	<fx:Script>
@@ -15,6 +15,17 @@
 			import mx.events.ResizeEvent;
 			import mx.rpc.events.ResultEvent;
 		 
+			
+			[Bindable]
+			private var locales:Array = [{label:"English", locale:"en_US"},
+				{label:"español", locale:"es_ES"},
+				{label:"việt", locale:"vie_VN"}];
+			
+			private function comboChangeHandler():void
+			{
+				resourceManager.localeChain = [localeComboBox.selectedItem.locale];
+			}
+			
 			[Bindable]
 			public var username:String;
 			[Bindable]
@@ -37,19 +48,10 @@
 				}            
 				else
 				{
-					Alert.show("Login failedl", "Failure");
+				loginError.text ="123";	
 				}
 			}
 			
-				[Bindable]
-				private var locales:Array = [{label:"English", locale:"en_US"},
-					{label:"español", locale:"es_ES"},
-					{label:"việt", locale:"vie_VN"}];
-			
-			private function comboChangeHandler():void
-			{
-				resourceManager.localeChain = [localeComboBox.selectedItem.locale];
-			}
 	
 			
 			private var point1:Point = new Point();
@@ -86,8 +88,9 @@
 	</s:HTTPService>
 	</fx:Declarations>	
 	<s:Image includeIn="login" top="26" horizontalCenter="0" source="assets/mission_control.png"/>
+	<s:RichText id="loginError" includeIn="login" top="168" color="#FF0000" horizontalCenter="0"/>
 	
-	<s:Form includeIn="login" top="197" horizontalCenter="0" skinClass="spark.skins.spark.FormSkin">
+	<s:Form includeIn="login" top="197" horizontalCenter="0" skinClass="spark.skins.spark.FormSkin" defaultButton="{submit}">
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="right"/>
 		</s:layout>
@@ -102,17 +105,16 @@
 						 textAlign="left"/>
 		</s:FormItem>
 		<s:FormItem width="124">
-			<s:Button width="100"
+			<s:Button width="100" id="submit"
 					  label="{resourceManager.getString('resources', 'login.login.button')}"
 					  click="tryLogin()"/>
 		</s:FormItem>
 	</s:Form>
 	
-	<s:HGroup includeIn="login" y="431" width="230" height="25" horizontalAlign="right"
-			  horizontalCenter="0" verticalAlign="middle">
-		<s:Label includeIn="login" width="99" height="20" text="Change language"
-				 verticalAlign="middle"/>
-		<mx:ComboBox id="localeComboBox" includeIn="login" width="116" change="comboChangeHandler()"
+	<s:HGroup y="431" width="230" height="25" horizontalAlign="right" horizontalCenter="0"
+			  verticalAlign="middle">
+		<s:Label width="99" height="20" text="Change language" verticalAlign="middle"/>
+		<mx:ComboBox id="localeComboBox" width="116" change="comboChangeHandler()"
 					 dataProvider="{locales}" horizontalCenter="0" paddingRight="5"/>
 	</s:HGroup>
 	<mx:LinkButton includeIn="login" top="378"

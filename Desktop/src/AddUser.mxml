@@ -2,22 +2,46 @@
 <s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009"
 			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:mx="library://ns.adobe.com/flex/mx"
-			   width="400" height="300" title="Add User">
+			   width="528" height="300" title="Add User"
+			   close="handleCloseEvent();">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
 <fx:Script>
 	<![CDATA[
-		var i:int = 1;
+		import mx.controls.Alert;
+		import mx.events.FlexEvent;
+		import mx.events.ResizeEvent;
+		import mx.managers.PopUpManager;
+		import mx.rpc.events.ResultEvent;
+		
+		// Handle the close button and Cancel button.
+		private function handleCloseEvent():void {
+			PopUpManager.removePopUp(this);
+		} 
+		
+	
 		
 	]]>
 </fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:Form x="80" y="38">
+	<s:Form x="28" y="23" width="206" height="108">
+		<s:layout>
+			<s:BasicLayout/>
+		</s:layout>
 		<s:FormItem>
 			<s:TextInput prompt="Username"/>
 		</s:FormItem>
-		<s:FormItem>
-			<s:TextInput enabled="false" prompt="Password"/>
+		<s:FormItem x="10" y="50">
+			<s:RichText text="RichText"/>
 		</s:FormItem>
 	</s:Form>
+	<s:RichText x="-514" y="544" text="RichText"/>
+	<s:Button x="164" y="149" label="Cancel"/>
+	<s:Button x="86" y="149" label="Add User"/>
+	<s:TileGroup x="285" y="23" width="200" height="200">
+		<s:CheckBox label="CheckBox"/>
+	</s:TileGroup>
 </s:TitleWindow>
